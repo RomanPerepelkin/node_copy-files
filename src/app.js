@@ -16,9 +16,11 @@ function copyFile() {
     return console.error('error');
   }
 
-  fs.cp(from, to, (error) => {
+  fs.copyFile(from, to, (error) => {
     if (error) {
-      console.error(error);
+      console.error('Error copying file:', error);
+    } else {
+      console.log('File copied successfully!');
     }
   });
 }
